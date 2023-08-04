@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:learner_education_app/screens/childernStaff_screen.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
 
 class Children extends StatelessWidget {
-  const Children({Key? key}) : super(key: key);
-
+const Children({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+           crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
 
@@ -71,40 +72,45 @@ class Children extends StatelessWidget {
 
 
                    ///column2
-                   Column(
-                     children: [
-                       Stack(
-                         children: [
-                           Container(
-                             // margin: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
-                             child: Image.asset('assets/images/Rectangle 1185.png',
-                               height: 245,
-                               width: 180,
-                             ),
-                           ),
-                           Image.asset('assets/images/child2.png',
-                             height: 239,
-                             width: 220,),
-                         ],
-                       ),
-                       SizedBox(height: 10,),
-                       Stack(
-                         children: [
-                           Container(
-                             // margin: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
-                             child: Image.asset('assets/images/Rectangle 1187.png',
-                               height: 170,
-                               //width: 150,
-                             ),
-                           ),
-                           Image.asset('assets/images/child4.png',
-                             height: 170,
-                             width: 160,
-    ),
-                         ],
-                       ),
+                   Container(
+                     margin: EdgeInsets.only(left: 1),
+                     child: Column(
 
-                     ],
+                       children: [
+                         Stack(
+                           alignment: Alignment.bottomCenter,
+                           children: [
+                             Container(
+                               child: Image.asset('assets/images/Rectangle 1185.png',
+                                 height: 232,
+                                 width: 180,
+                               ),
+                             ),
+                             Image.asset('assets/images/child2.png',
+                               height: 220,
+                               width: 220,
+                             ),
+                           ],
+                         ),
+                         SizedBox(height: 10,),
+                         Stack(
+                           alignment: Alignment.bottomCenter,
+                           children: [
+                             Container(
+                               child: Image.asset('assets/images/Rectangle 1187.png',
+                                height: 170,
+                                 //width: 150,
+                               ),
+                             ),
+                             Image.asset('assets/images/child4.png',
+                               height: 170,
+                               width: 160,
+    ),
+                           ],
+                         ),
+
+                       ],
+                     ),
                    ),
                  ],
                ),
@@ -161,58 +167,43 @@ class Children extends StatelessWidget {
               ),
 
              SizedBox(height: 10,),
-              /// bottom bar
-              BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                backgroundColor: Colors.white,
-                selectedItemColor: Colors.blue,
-                selectedFontSize: 14,
-                unselectedFontSize: 14,
-                onTap: (value) {
-                  // Respond to item press.
-                },
-                items: [
-
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home_outlined,
-                      color: Colors.blue,
-                    ),
-                    label: 'Home',
-
-
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.messenger_outline,
-                      color: Colors.blue,
-                    ),
-                    label: 'Message',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.notifications_none_outlined,
-                      color: Colors.blue,
-                    ),
-                    label: 'Notification',
 
 
 
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.person_outline,
-                      color: Colors.blue,
-                    ),
-                    label: 'User',
-
-
-
-                  ),
-
-
-
-                ],
-              ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar:  SalomonBottomBar(
+        items: [
+          /// Home
+          SalomonBottomBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// Message
+          SalomonBottomBarItem(
+            icon: Icon(Icons.messenger_outline_rounded),
+            title: Text("Message"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// notification
+          SalomonBottomBarItem(
+            icon: Icon(Icons.notifications_none_outlined),
+            title: Text("notification"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// Profile
+          SalomonBottomBarItem(
+            icon: Icon(Icons.person),
+            title: Text("Profile"),
+            selectedColor: Colors.blue,
+          ),
+        ],
       ),
     );
   }

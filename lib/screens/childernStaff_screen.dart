@@ -181,7 +181,9 @@ class person_In_staffList extends StatelessWidget {
                 height: 50,
                 width: 50,
               ),
+
               SizedBox(width: 10,),
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

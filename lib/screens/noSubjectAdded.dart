@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learner_education_app/screens/childernStaff_screen.dart';
 import 'package:learner_education_app/screens/children.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
 
 class NoSubjectAdded_Screen extends StatelessWidget {
 
@@ -213,6 +215,7 @@ class NoSubjectAdded_Screen extends StatelessWidget {
               // first row
 
               Container(
+
                     margin: EdgeInsets.symmetric(vertical: 10,horizontal: 15),
                     child: Row(
                       children: [
@@ -277,54 +280,6 @@ class NoSubjectAdded_Screen extends StatelessWidget {
               ),
               SizedBox(height: 10,),
 
-              BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                backgroundColor: Colors.white,
-                selectedItemColor: Colors.blue,
-                selectedFontSize: 14,
-                unselectedFontSize: 14,
-                onTap: (value) {
-                  // Respond to item press.
-                },
-                items: [
-
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home_outlined,
-                      color: Colors.blue,
-                    ),
-                    label: 'Home',
-
-
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.messenger_outline,
-                      color: Colors.blue,
-                    ),
-                    label: 'Message',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.notifications_none_outlined,
-                      color: Colors.blue,
-                    ),
-                    label: 'Notification',
-
-
-
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.person_outline,
-                      color: Colors.blue,
-                    ),
-                    label: 'User',
-
-
-
-                  ),
-
-
-
-                ],
-              ),
 
 
 
@@ -345,6 +300,37 @@ class NoSubjectAdded_Screen extends StatelessWidget {
 
 
         ),
+      bottomNavigationBar: SalomonBottomBar(
+        items: [
+          /// Home
+          SalomonBottomBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// Message
+          SalomonBottomBarItem(
+            icon: Icon(Icons.messenger_outline_rounded),
+            title: Text("Message"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// notification
+          SalomonBottomBarItem(
+            icon: Icon(Icons.notifications_none_outlined),
+            title: Text("notification"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// Profile
+          SalomonBottomBarItem(
+            icon: Icon(Icons.person),
+            title: Text("Profile"),
+            selectedColor: Colors.blue,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -364,19 +350,14 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Color(0x08ffffff),
-      // decoration: BoxDecoration(
-      //   border: Border.all(
-      //     color: Color(0xffE5E5E5),
-      //   ),
-      //   borderRadius: BorderRadius.all(
-      //       Radius.circular(5.0) //                 <--- border radius here
-      //   ),                        ),
-      color: Colors.cyan,
+      // shadowColor: Color(0xff40BFFF).withOpacity(0.24),
+      decoration: BoxDecoration(
+        color: Colors.cyan,
+      borderRadius: BorderRadius.circular(12),                        ),
       height: 210,
       width: 170,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(

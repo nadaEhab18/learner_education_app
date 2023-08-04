@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class NotNotificationFounded extends StatelessWidget {
   const NotNotificationFounded({Key? key}) : super(key: key);
@@ -6,24 +7,6 @@ class NotNotificationFounded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     backgroundColor: Colors.white,
-      //     title: Text('Notification',
-      //     style: TextStyle(
-      //       color: Colors.black,
-      //       fontSize: 20,
-      //       fontWeight: FontWeight.w600,
-      //     ),
-      //
-      //     ),
-      //     actions: [
-      //       Icon(Icons.settings_outlined,
-      //       color: Colors.black,
-      //         size: 22,
-      //       ),
-      //     ],
-      //   ),
-
       body: SafeArea(
         child: Column(
           children: [
@@ -73,58 +56,43 @@ Lorem ipsum dolor sit amet, consectetur
               ),
             ),
 
-            SizedBox(height: 90,),
-            BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.white,
-              selectedItemColor: Colors.blue,
-              selectedFontSize: 14,
-              unselectedFontSize: 14,
-              onTap: (value) {
-                // Respond to item press.
-              },
-              items: [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home_outlined,
-                    color: Colors.blue,
-                  ),
-                  label: 'Home',
+            SizedBox(height: 10,),
 
-
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.messenger_outline,
-                    color: Colors.blue,
-                  ),
-                  label: 'Message',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.notifications_none_outlined,
-                    color: Colors.blue,
-                  ),
-                  label: 'Notification',
-
-
-
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person_outline,
-                    color: Colors.blue,
-                  ),
-                  label: 'User',
-
-
-
-                ),
-
-
-
-              ],
-            ),
 
       ],
       ),
 
+      ),
+      bottomNavigationBar: SalomonBottomBar(
+        items: [
+          /// Home
+          SalomonBottomBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// Message
+          SalomonBottomBarItem(
+            icon: Icon(Icons.messenger_outline_rounded),
+            title: Text("Message"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// notification
+          SalomonBottomBarItem(
+            icon: Icon(Icons.notifications_none_outlined),
+            title: Text("notification"),
+            selectedColor: Colors.blue,
+          ),
+
+          /// Profile
+          SalomonBottomBarItem(
+            icon: Icon(Icons.person),
+            title: Text("Profile"),
+            selectedColor: Colors.blue,
+          ),
+        ],
       ),
     );
   }
