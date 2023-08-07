@@ -10,49 +10,67 @@ class AddGurdian_Screen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 20,horizontal: 15),
+          margin: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Icon(Icons.arrow_back), // ايكون ولا iconButton ولا push
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
 
               // Add a guardian text
-              Text('Add a gurdian',
+              Text(
+                'Add a gurdian',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
 
               // Give access text
-              Text('Give access to another guardian',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Color(0xff4E74F9),
-              ),),
-              SizedBox(height: 20,),
+              Text(
+                'Give access to another guardian',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff4E74F9),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
 
               // Mobile
-              Text('Mobile',
+              Text(
+                'Mobile',
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 16,
-                ),),
+                ),
+              ),
               // mobile textField
-              MobileTextField(hint: '91+9876543210', icon: Icons.phone_android_outlined),
-              SizedBox(height: 10,),
+              MobileTextField(
+                  hint: '91+9876543210', icon: Icons.phone_android_outlined),
+              SizedBox(
+                height: 10,
+              ),
               // Mobile confirm
-              Text('Confirm mobile',
+              Text(
+                'Confirm mobile',
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 16,
-                ),),
+                ),
+              ),
               // mobile textField  = > شكل الموبيل مختلف
-              MobileTextField(hint: '91+9876543210', icon: Icons.phone_android_outlined),
-              SizedBox(height: 15,),
-
+              MobileTextField(
+                  hint: '91+9876543210', icon: Icons.phone_android_outlined),
+              SizedBox(
+                height: 15,
+              ),
 
               // give access button
               Container(
@@ -62,13 +80,13 @@ class AddGurdian_Screen extends StatelessWidget {
                   onPressed: () {
                     print('Get Started');
                   },
-                  style:ElevatedButton.styleFrom(
-                    primary:Color(0xff4E74F9),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xff4E74F9),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  child:GestureDetector(
+                  child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
@@ -76,20 +94,17 @@ class AddGurdian_Screen extends StatelessWidget {
                         ),
                       );
                     },
-                    child:Text(
+                    child: Text(
                       'Give Access',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
                       ),
-
                     ),
                   ),
-
                 ),
               ),
-
             ],
           ),
         ),
